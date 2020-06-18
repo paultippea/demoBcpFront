@@ -1,0 +1,20 @@
+<h1>tipo-cambio </h1>
+
+
+    <input type="text" placeholder="monto" #monto>
+    <select #monedaOrigen>
+        <option >Moneda Origen</option>
+        <option *ngFor="let b of lstMonedas" [value]="b.id">{{b.codigo}}</option>
+      </select>
+
+      <select #monedaDestino >
+        <option >Moneda Destino</option>
+        <option *ngFor="let c of lstMonedas" [value]="c.id">{{c.codigo}}</option>
+      </select>
+        <button (click)="calcularTipoCambio(monto.value,monedaOrigen.value,monedaDestino.value)">
+            Calcular
+        </button>
+
+        {{cambio}}
+
+
